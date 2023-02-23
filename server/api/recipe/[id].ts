@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default defineEventHandler(async (event) => {
-    //const body = await readBody(event);
     const id = getRouterParam(event, 'id');
     await prisma.$connect();
 
@@ -16,5 +15,9 @@ export default defineEventHandler(async (event) => {
         });
         return Recipe;
     }
-    //return {body};
+    if (event.req.method === "PUT")
+    {
+      const body = await readBody(event);
+      return {body};
+    }
 })
