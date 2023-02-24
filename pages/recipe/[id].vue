@@ -13,12 +13,12 @@
         </p>
         <br>
         <div class="w-1/2 mx-auto flex flex-row">
-            <div class="w-1/4 mx-auto bg-fuchsia-300 py-20 px-5 shadow-xl" >
+            <div class="w-1/4 mx-auto bg-blue-300 py-20 px-5 shadow-xl" >
                 <p>
                     <h2 class="text-rose-700 font-bold text-xl">Ingredients</h2>
                 </p>
                 <p v-for="ingredient in recipe.ingredients" :key="ingredient.id">
-                    <h2>{{ ingredient }}</h2>
+                    <h2 class="font-bold">{{ ingredient }}</h2>
                 </p>
             </div>
             <div class="w-3/4 mx-auto bg-blue-200 shadow-xl py-20 px-10">
