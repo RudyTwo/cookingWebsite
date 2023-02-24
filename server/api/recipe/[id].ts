@@ -18,6 +18,7 @@ export default defineEventHandler(async (event) => {
     if (event.req.method === "PUT")
     {
       const {name} = await readBody(event);
-      return {name};
+      var myName = name + " and RudyTwo";
+      return {myName};
     }
 })
