@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     }
     if (event.req.method === "PUT")
     {
-      const body = await readBody(event);
-      return {body};
+      const {name} = await readBody(event);
+      return {name};
     }
 })
