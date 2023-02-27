@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
     const id = getRouterParam(event, 'id');
     await prisma.$connect();
 
+    //GET SINGLE RECIPE FOR VIEWING METHOD
     if (event.req.method === "GET")
     {
         const Recipe = await prisma.recipes.findUnique({
@@ -15,6 +16,8 @@ export default defineEventHandler(async (event) => {
         });
         return Recipe;
     }
+
+    //NEW RECIPE METHOD
     if (event.req.method === "POST")
     {
       const body = await readBody(event);
@@ -40,4 +43,16 @@ export default defineEventHandler(async (event) => {
 
       return {body};
     }
+
+    //GET SINGLE RECIPE FOR VIEWING METHOD
+  if (event.req.method === "DELELE")
+    {
+        const Recipe = await prisma.recipes.delete({
+          where: {
+            id: id,
+          }, 
+        });
+        return Recipe;
+    }
+
 })
