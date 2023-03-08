@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     await prisma.$connect();
 
     //GET SINGLE RECIPE FOR VIEWING METHOD
-    if (event.req.method === "GET")
+    if (event.node.req.method === "GET")
     {
         const Recipe = await prisma.recipes.findUnique({
           where: {
@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
     }
 
     //NEW RECIPE METHOD
-    if (event.req.method === "POST")
+    if (event.node.req.method === "POST")
     {
       const body = await readBody(event);
 
@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
     }
 
     //EDIT RECIPE METHOD
-    if (event.req.method === "PUT")
+    if (event.node.req.method === "PUT")
     {
       const body = await readBody(event);
 
@@ -71,15 +71,19 @@ export default defineEventHandler(async (event) => {
       return {body};
     }
 
-    //GET SINGLE RECIPE FOR VIEWING METHOD
-  if (event.req.method === "DELELE")
+    //DELETE RECIPE METHOD
+  if (event.node.req.method === "DELETE")
     {
-        const Recipe = await prisma.recipes.delete({
-          where: {
-            id: id,
-          }, 
-        });
-        return Recipe;
+      //Testing
+      console.log(id + " has been deleted.");
+
+      //Delete the recipe from the database
+      await prisma.recipes.delete({
+        where: {
+          id: id,
+        }, 
+      });
+        return id + " has been deleted.";
     }
 
 })
