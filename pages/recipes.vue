@@ -13,7 +13,8 @@
 <template>
     <div>
         <br><br>
-        <div v-for="recipe in recipes" :key="recipe.id" class="w-1/4 mx-auto hover:animate-[pulse_0.5s]">
+        <!--div v-for="recipe in recipes" :key="recipe.id" class="w-1/4 mx-auto hover:animate-[pulse_0.5s]"-->
+        <div v-for="recipe in recipes" :key="recipe.id" class="w-1/4 mx-auto hover:animate-quickPulse">
                 <p class="bg-sky-200 shadow-lg hover:brightness-95 hover:drop-shadow-xl py-5 relative">
                     <button name="delRecipe" class="absolute right-1 top-1" @click="$event => deleteRecipe(recipe.id)">
                         <Icon icon="material-symbols:delete-outline" color="red" width="24" height="24" name="scan-delete" class="inline-flex items-end ml-1" />

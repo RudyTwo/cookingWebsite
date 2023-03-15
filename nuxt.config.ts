@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@formkit/nuxt'
+    '@formkit/nuxt',
+    //'@formkit/themes/tailwindcss/genesis'
   ],
     vite: {
     server: {

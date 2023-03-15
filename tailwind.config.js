@@ -1,13 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [],
+import defaultTheme from 'tailwindcss/defaultTheme'
+const FormKitVariants = require('@formkit/themes/tailwindcss')
+
+export default {
   theme: {
     extend: {
+      colors: {
+        primary: defaultTheme.colors.green
+      },
       animation: {
-        'sBounce': 'bounce 1s'
-      }
-    },
+        'quickPulse': 'pulse 0.5s'
+      },
+    }
   },
-  plugins: [],
+  content: [
+    './src/**/*.{html,js,vue}',
+    './node_modules/@formkit/themes/dist/tailwindcss/genesis/index.cjs',
+  ],
+  plugins: [FormKitVariants],
 }
-
