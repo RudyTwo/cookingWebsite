@@ -10,9 +10,9 @@ datasource db {
 model Recipes {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   v            Int      @map("__v")
-  description  String
-  image        String
+  description  String?
+  image        String?
   ingredients  String[]
-  instructions String
+  instructions String?
   name         String
 }
