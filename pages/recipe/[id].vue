@@ -1,4 +1,6 @@
 <script setup>
+    import { Icon } from '@iconify/vue';
+
     const route = useRoute();
     const id = route.params.id;
     const { data: recipe } = await useFetch('/api/recipe/' + id);
@@ -7,8 +9,13 @@
 <template>
     <div>
         <br><br>
-        <p class="mx-auto w-1/4">
-            <h1 class="text-amber-800 font-extrabold text-6xl mx-auto">{{ recipe.name }}</h1>
+        <p class="mx-auto w-1/4 ">
+            <h1 class="text-amber-800 font-extrabold text-6xl mx-auto">
+                {{ recipe.name }}
+                <NuxtLink :to="`form/${id}`" class="inline-flex items-end ml-1 my-0">
+                    <Icon icon="material-symbols:edit" color="green" width="24" height="24" name="scan-delete"/>
+                </NuxtLink>
+            </h1> 
             <h3 class="text-lg italic mx-auto">{{ recipe.description }}</h3>
         </p>
         <br>
