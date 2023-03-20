@@ -30,6 +30,15 @@
                         <p style="font-style: italic;">{{ recipe.instructions }}</p>
                     </h3>
                 </p>
+                <br>
+                <p>
+                    <h2 class="text-rose-700 font-bold text-xl">Image</h2>
+                </p>
+                <p>
+                    <h3 style="margin-left: 35px;">
+                        <p style="font-style: italic;">{{ recipe.image }}</p>
+                    </h3>
+                </p>
             </div>
             <br><br>
         </div>

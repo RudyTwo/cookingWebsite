@@ -57,8 +57,8 @@ export default defineEventHandler(async (event) => {
       const {ingredients} = await readBody(event);
       const {image} = await readBody(event);
       
-      //Write to the database
-      await prisma.recipes.create({
+      //Update to the database
+      await prisma.recipes.update({
         data: {
           name: name,
           description: description,
@@ -66,6 +66,9 @@ export default defineEventHandler(async (event) => {
           image: image,
           v: 0,
           ingredients: ingredients
+        },
+        where: {
+          id: id
         },
       })
 

@@ -9,7 +9,6 @@
             body: fields
         })
         //alert(JSON.stringify(recipe.value.recipe, null, 4))
-        //alert(recipe.value.recipe.name)
         const router = useRouter();
         router.push({
            path: '../' + recipe.value.recipe.id
