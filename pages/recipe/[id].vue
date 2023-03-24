@@ -11,6 +11,9 @@
         <br><br>
         <p class="mx-auto text-center">
             <h1 class="text-amber-800 font-extrabold text-6xl mx-auto">
+                <NuxtLink :to="'../'" class="inline-flex">
+                    <Icon name="ListAll" icon="fluent-mdl2:backlog-board" color="blue" width="24" height="24" class="inline-flex items-end mr-1 my-3" />
+                </NuxtLink>
                 <NuxtLink :to="`form/${id}`" class="inline-flex">
                     {{ recipe.name }}
                     <Icon icon="material-symbols:edit" color="green" width="24" height="24" name="scan-delete" class="inline-flex items-end ml-1 my-3"/>
