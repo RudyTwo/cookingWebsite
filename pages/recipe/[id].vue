@@ -9,14 +9,14 @@
 <template>
     <div>
         <br><br>
-        <p class="mx-auto w-1/4 ">
+        <p class="mx-auto text-center">
             <h1 class="text-amber-800 font-extrabold text-6xl mx-auto">
-                {{ recipe.name }}
-                <NuxtLink :to="`form/${id}`" class="inline-flex items-end ml-1 my-0">
-                    <Icon icon="material-symbols:edit" color="green" width="24" height="24" name="scan-delete"/>
+                <NuxtLink :to="`form/${id}`" class="inline-flex">
+                    {{ recipe.name }}
+                    <Icon icon="material-symbols:edit" color="green" width="24" height="24" name="scan-delete" class="inline-flex items-end ml-1 my-3"/>
                 </NuxtLink>
             </h1> 
-            <h3 class="text-lg italic mx-auto">{{ recipe.description }}</h3>
+            <h3 class="text-lg italic mx-auto my-2">{{ recipe.description }}</h3>
         </p>
         <br>
         <div class="w-1/2 mx-auto flex flex-row">
