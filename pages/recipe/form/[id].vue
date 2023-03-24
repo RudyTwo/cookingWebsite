@@ -49,8 +49,8 @@
                 <FormKit type="text" name="description" id="description" label="Description" :value=recipe.description input-class="rounded-md bg-white" />
                 <FormKit type="text" name="instructions" id="instructions" label="Instructions" :value=recipe.instructions input-class="rounded-md bg-white" />
                 <FormKit type="text" name="image" id="image" label="image" :value=recipe.image input-class="rounded-md bg-white" />
-                <FormKit type="list" v-model="values">
-                    <FormKit type="text" name="ingredients" label="Ingredient" input-class="rounded-md bg-white"
+                <FormKit type="list" v-model="values" name="ingredients">
+                    <FormKit type="text" name="ingredient" label="Ingredient" input-class="rounded-md bg-white"
                         v-for="key in ingredients"
                         :key="key"
                         :id="key"
